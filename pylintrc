@@ -219,6 +219,9 @@ module-rgx=^(_?[a-z][a-z0-9_]*|__init__)$
 # Regular expression matching correct method names
 method-rgx=(?x)^(?:(?P<exempt>_[a-z0-9_]+__|runTest|setUp|tearDown|setUpTestCase|tearDownTestCase|setupSelf|tearDownClass|setUpClass|(test|assert)_*[A-Z0-9][a-zA-Z0-9_]*|next)|(?P<camel_case>_{0,2}[A-Z][a-zA-Z0-9_]*)|(?P<snake_case>_{0,2}[a-z][a-z0-9_]*))$
 
+# Regular expression matching correct type variable names
+typevar-rgx=^_?[A-Z]+(_[a-z][a-z0-9_]*)?$
+
 # Regular expression which should only match function or class names that do
 # not require a docstring.
 no-docstring-rgx=(__.*__|main|test.*|.*test|.*Test)$
@@ -280,7 +283,7 @@ max-module-lines=99999
 # spaces.  Google's externaly-published style guide says 4, consistent with
 # PEP 8.  Here, we use 2 spaces, for conformity with many open-sourced Google
 # projects (like TensorFlow).
-indent-string='  '
+indent-string='    '
 
 # Number of spaces of indent required inside a hanging  or continued line.
 indent-after-paren=4
@@ -427,3 +430,4 @@ valid-metaclass-classmethod-first-arg=mcs
 overgeneral-exceptions=StandardError,
                        Exception,
                        BaseException
+

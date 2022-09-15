@@ -12,6 +12,7 @@ cd python-tools
 
 echo "update python-tools"
 git pull origin main
+git checkout main
 cd ..
 
 echo "remove old version of pylintrc and .pre-commit-config.yaml"

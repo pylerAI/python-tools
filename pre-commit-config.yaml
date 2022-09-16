@@ -28,7 +28,11 @@ repos:
     rev: v1.1.271
     hooks:
     -   id: pyright
- 
+        name: pyright
+        entry: pyright
+        language: system
+        types: [python]
+        args: ["--lib"]
         
 -   repo: local
     hooks:

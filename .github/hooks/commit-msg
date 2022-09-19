@@ -69,39 +69,16 @@ def check_commit_msg_pattern()->None:
     with open(msg_temp, "r", encoding="utf-8") as f_msg:
         lines = f_msg.readlines()
 
-    # Remove the comment lines in the commit message.
-    lines = [line for line in lines if not line.strip().startswith("#")]
-    has_warning = False
-    if len(lines) < 4:
-        message = "Commit message should have at least 4 lines."
-        print_with_color(message, Notification.ERROR)
-        sys.exit(1)
-
     has_story_tag = False
-    if len(lines[0]) > 50:
+    has_warning = False
+    
+    if len(lines[0]) > 72:
         has_warning = True
-        message = "Commit title max len must be less than 50 chars."
+        message = "Commit title max len must be less than 72 chars."
         print_with_color(message, Notification.WARNING)
     if check_tag(lines[0]):
         has_story_tag = True
-    if lines[1].strip() != "":
-        has_warning = True
-        message = "Commit title and body should be seperated by empty line."
-        print_with_color(message, Notification.WARNING)
 
-    has_story_id = False
-    for line in lines[2:]:
-        if len(line) > 72:
-            has_warning = True
-            message = "Commit body should wrap at 72 chars."
-            print_with_color(message, Notification.WARNING)
-            sys.exit(1)
-        if "[#" in line:
-            has_story_id = True
-    if not has_story_id:
-        message = "Please add a issue ID in the commit message."
-        print_with_color(message, Notification.WARNING)
-        sys.exit(1)
     if not has_story_tag:
         message = "Please add a tag in the commit message."
         print_with_color(message, Notification.WARNING)

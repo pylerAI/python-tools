@@ -30,6 +30,9 @@ class Notification(str, Enum):
 
 def print_with_color(message: str, level: Notification) -> None:
     """Print the message with a color for the corresponding level.
+    Args:
+        message (str): message from the pattern
+        level (str): notification message level [OK, INFO, WARNING, ERROR]
     """
     print(
         BColors[level]
@@ -40,8 +43,14 @@ def print_with_color(message: str, level: Notification) -> None:
     )
 
 
-def check_tag(title):
-    _tags = ["chore", "docs", "style", "feat", "fix", "refactor", "test"]
+def check_tag(title: str)->bool:
+    """Checks the title of the commit message
+    Args:
+        title (str): first line of the commit message
+    Returns:
+        True or False
+    """
+    _tags = ["chore", "feat", "fix", "test"]
     for tag in _tags:
         tag += ":"
         if title.startswith(tag):
@@ -49,7 +58,7 @@ def check_tag(title):
     return False
 
 
-def check_commit_msg_pattern():
+def check_commit_msg_pattern()->None:
     """Check the format of the commit message.
     The argument passed to the "commmit-msg" hook is the path to a 
     temporary file that contains the commit message written by the

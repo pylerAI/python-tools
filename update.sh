@@ -19,7 +19,7 @@ echo "update commit-msg"
 cp .github/hooks/commit-msg ../.git/hooks/commit-msg
 chmod +x ../.git/hooks/commit-msg
 
-echo "remove old version of pylintrc and .pre-commit-config.yaml"
+echo "remove old version of pylintrc and .pre-commit-config.yaml and commit-msg"
 rm -rf .pylintrc
 rm -rf .pre-commit-config.yaml
 

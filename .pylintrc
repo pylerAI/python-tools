@@ -54,7 +54,7 @@ disable=
         ;abstract-method,
         ;apply-builtin,
         ;arguments-differ,
-        ;attribute-defined-outside-init,
+        attribute-defined-outside-init,
         ;backtick,
         ;bad-option-value,
         ;basestring-builtin,
@@ -73,6 +73,7 @@ disable=
         ;file-builtin,
         ;filter-builtin-not-iterating,
         fixme,
+		unspecified-encoding,
         ;getslice-method,
         ;global-statement,
         ;hex-method,
@@ -90,7 +91,7 @@ disable=
         ;long-suffix,
         ;map-builtin-not-iterating,
         ;misplaced-comparison-constant,
-        missing-function-docstring,
+        ;missing-function-docstring,
         ;metaclass-assignment,
         ;next-method-called,
         ;next-method-defined,
@@ -257,7 +258,7 @@ ignored-classes=optparse.Values,thread._local,_thread._local
 # List of members which are set dynamically and missed by pylint inference
 # system, and so shouldn't trigger E1101 when accessed. Python regular
 # expressions are accepted.
-generated-members=
+generated-members=numpy.*,torch.*,tensorflow.*,pandas.*,cv2.*
 
 
 [FORMAT]

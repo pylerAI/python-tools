@@ -73,7 +73,7 @@ disable=
         ;file-builtin,
         ;filter-builtin-not-iterating,
         fixme,
-		unspecified-encoding,
+		    unspecified-encoding,
         ;getslice-method,
         ;global-statement,
         ;hex-method,

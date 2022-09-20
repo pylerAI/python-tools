@@ -14,9 +14,18 @@ echo "update python-tools"
 git pull origin main
 git checkout main
 
+
+echo "copy templates"
+cp -r .github/ISSUE_TEMPLATE ../.github
+cp -r .github/workflows ../.github
+cp .github/issue_template.md ../.github
+cp .github/pull_request_template.md ../.github
+
+
 echo "update commit-msg"
 cp .github/hooks/commit-msg ../.git/hooks/commit-msg
 chmod +x ../.git/hooks/commit-msg
+
 
 cd ..
 

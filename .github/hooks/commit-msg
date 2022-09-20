@@ -49,7 +49,7 @@ def check_tag(title: str) -> bool:
     Returns:
         True or False
     """
-    _tags = ["chore", "feat", "fix", "test", "merge"]
+    _tags = ["chore", "feat", "fix", "test", "merge", "docs"]
     for tag in _tags:
         tag += ":"
         if title.startswith(tag):
@@ -59,7 +59,7 @@ def check_tag(title: str) -> bool:
 
 def check_commit_msg_pattern() -> None:
     """Check the format of the commit message.
-    The argument passed to the "commmit-msg" hook is the path to a 
+    The argument passed to the "commmit-msg" hook is the path to a
     temporary file that contains the commit message written by the
     developer.
     """
@@ -70,7 +70,7 @@ def check_commit_msg_pattern() -> None:
 
     has_story_tag = False
     has_warning = False
-    
+
     if len(lines[0]) > 72:
         has_warning = True
         message = "Commit title max len must be less than 72 chars."
@@ -89,4 +89,4 @@ def check_commit_msg_pattern() -> None:
 
 if __name__ == "__main__":
     check_commit_msg_pattern()
-    
+

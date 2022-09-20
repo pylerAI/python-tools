@@ -17,7 +17,6 @@ git checkout main
 
 echo "copy templates"
 cp -r .github/ISSUE_TEMPLATE ../.github
-cp -r .github/workflows ../.github
 cp .github/issue_template.md ../.github
 cp .github/pull_request_template.md ../.github
 

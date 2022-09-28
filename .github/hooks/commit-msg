@@ -11,21 +11,22 @@ class BColors(str, Enum):
     Reference:
     - https://stackoverflow.com/questions/287871
     """
-    OK       = '\u001b[32m'
-    INFO     = '\u001b[33m'
-    WARNING  = '\u001b[34m'
-    ERROR    = '\u001b[35m'
-    BOLD     = '\u001b[1m'
-    ENDC     = '\u001b[0m'
+
+    OK = "\u001b[32m"
+    INFO = "\u001b[33m"
+    WARNING = "\u001b[34m"
+    ERROR = "\u001b[35m"
+    BOLD = "\u001b[1m"
+    ENDC = "\u001b[0m"
 
 
 class Notification(str, Enum):
-    """An Enum for notification levels.
-    """
-    OK      = "OK"
-    INFO    = "INFO"
+    """An Enum for notification levels."""
+
+    OK = "OK"
+    INFO = "INFO"
     WARNING = "WARNING"
-    ERROR   = "ERROR"
+    ERROR = "ERROR"
 
 
 def print_with_color(message: str, level: Notification) -> None:
@@ -35,22 +36,19 @@ def print_with_color(message: str, level: Notification) -> None:
         level (str): notification message level [OK, INFO, WARNING, ERROR]
     """
     print(
-        BColors[level]
-        + BColors.BOLD
-        + f"{level}: [Policy]"
-        + message
-        + BColors.ENDC
+        f"{BColors[level]}{BColors.BOLD}{level}: [Policy]{message}{BColors.ENDC}"  # pylint: disable=line-too-long
     )
+
 
 def check_tag(title: str) -> bool:
     """Checks the title of the commit message
     Args:
         title (str): first line of the commit message
     Returns:
-        True or False
+        bool: Whether the tag of the commit message is valid or not.
     """
-    _tags = ["chore", "feat", "fix", "test", "merge", "docs"]
-    for tag in _tags:
+    tags = ["chore", "feat", "fix", "test", "merge", "docs"]
+    for tag in tags:
         tag += ":"
         if title.startswith(tag):
             return True
@@ -89,4 +87,3 @@ def check_commit_msg_pattern() -> None:
 
 if __name__ == "__main__":
     check_commit_msg_pattern()
-

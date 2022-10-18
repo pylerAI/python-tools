@@ -33,7 +33,7 @@ rm -rf .pylintrc
 rm -rf .pre-commit-config.yaml
 
 echo "generate new files"
-ln -s python-tools/.pylintrc .pylintrc
+# ln -s python-tools/.pylintrc .pylintrc
 ln -s python-tools/.pre-commit-config.yaml .pre-commit-config.yaml
 
 echo "done"

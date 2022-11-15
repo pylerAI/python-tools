@@ -101,7 +101,7 @@ disable=
         ;no-else-raise,
         ;no-else-return,
         ;no-init,  # added
-        ;no-member,
+        no-member,
         ;no-name-in-module,
         ;no-self-use,
         ;nonzero-method,

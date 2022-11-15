@@ -1,16 +1,16 @@
 DIR=$PWD
 
-if [[ $DIR == *"python-tools"* ]]; then
+if [[ $DIR == *"ml-python-tools"* ]]; then
 	cd ..
 fi
 echo "git submodule init"
 git submodule init
 echo "git submodule update"
 git submodule update
-echo "change dir into python-tools"
-cd python-tools
+echo "change dir into ml-python-tools"
+cd ml-python-tools
 
-echo "update python-tools"
+echo "update ml-python-tools"
 git pull origin main
 git checkout main
 
@@ -34,6 +34,6 @@ rm -rf .pre-commit-config.yaml
 
 echo "generate new files"
 # ln -s python-tools/.pylintrc .pylintrc
-ln -s python-tools/.pre-commit-config.yaml .pre-commit-config.yaml
+ln -s ml-python-tools/.pre-commit-config.yaml .pre-commit-config.yaml
 
 echo "done"

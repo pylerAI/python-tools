@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DIR=$PWD
 
 if [[ $DIR == *"ml-python-tools"* ]]; then

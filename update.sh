@@ -14,11 +14,10 @@ cd ml-python-tools
 
 echo "update ml-python-tools"
 git pull origin main
-git checkout main
+git switch main
 
 
 echo "copy templates"
-cp -r .github/ISSUE_TEMPLATE ../.github
 cp .github/issue_template.md ../.github
 cp .github/pull_request_template.md ../.github
 

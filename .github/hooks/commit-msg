@@ -36,7 +36,8 @@ def print_with_color(message: str, level: Notification) -> None:
         level (str): notification message level [OK, INFO, WARNING, ERROR]
     """
     print(
-        f"{BColors[level]}{BColors.BOLD}{level}: [Policy]{message}{BColors.ENDC}"  # pylint: disable=line-too-long
+        f"{BColors[level]}{BColors.BOLD}{level}: "
+        f"[Policy]{message}{BColors.ENDC}"
     )
 
 
@@ -47,7 +48,15 @@ def check_tag(title: str) -> bool:
     Returns:
         bool: Whether the tag of the commit message is valid or not.
     """
-    tags = ["chore", "feat", "fix", "test", "merge", "docs"]
+    tags = [
+        "chore",
+        "feat",
+        "fix",
+        "test",
+        "merge",
+        "docs",
+        "refactor",
+    ]
     for tag in tags:
         tag += ":"
         if title.startswith(tag):
@@ -73,6 +82,7 @@ def check_commit_msg_pattern() -> None:
         has_warning = True
         message = "Commit title max len must be less than 72 chars."
         print_with_color(message, Notification.WARNING)
+
     if check_tag(lines[0]):
         has_story_tag = True
 
@@ -80,6 +90,7 @@ def check_commit_msg_pattern() -> None:
         message = "Please add a tag in the commit message."
         print_with_color(message, Notification.WARNING)
         sys.exit(1)
+
     if not has_warning:
         message = "Please follow the commit message pattern rules."
         print_with_color(message, Notification.OK)

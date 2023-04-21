@@ -10,9 +10,9 @@ git submodule init
 echo "git submodule update"
 git submodule update
 echo "change dir into ml-python-tools"
-cd ml-python-tools
+cd python-tools
 
-echo "update ml-python-tools"
+echo "update python-tools"
 git pull origin main
 git switch main
 
@@ -34,7 +34,7 @@ rm -rf .pylintrc
 rm -rf .pre-commit-config.yaml
 
 echo "generate new files"
-cp ml-python-tools/.pylintrc .pylintrc
-cp ml-python-tools/.pre-commit-config.yaml .pre-commit-config.yaml
+cp python-tools/.pylintrc .pylintrc
+cp python-tools/.pre-commit-config.yaml .pre-commit-config.yaml
 
 echo "done"

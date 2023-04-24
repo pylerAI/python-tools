@@ -328,6 +328,8 @@ callbacks=cb_,_cb
 # builtins.
 redefining-builtins-modules=six,six.moves,past.builtins,future.builtins,functools
 
+# Ignore argument-names with args
+ignored-argument-names=arg|args|kwargs
 
 [LOGGING]
 

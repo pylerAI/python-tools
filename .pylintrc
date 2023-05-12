@@ -148,6 +148,7 @@ disable=
         ;wrong-import-order,
         ;xrange-builtin,
         ;zip-builtin-not-iterating,
+        arguments-differ
 
 
 [REPORTS]

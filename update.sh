@@ -2,14 +2,14 @@
 
 DIR=$PWD
 
-if [[ $DIR == *"ml-python-tools"* ]]; then
+if [[ $DIR == *"python-tools"* ]]; then
 	cd ..
 fi
 echo "git submodule init"
 git submodule init
 echo "git submodule update"
 git submodule update
-echo "change dir into ml-python-tools"
+echo "change dir into python-tools"
 cd python-tools
 
 echo "update python-tools"
